@@ -1,0 +1,66 @@
+<!DOCUTYPE html>
+<html lang="ja">
+<head>
+<div id="title">
+  <h2>title</h2>
+</div>
+<style>
+    h1{ color:blue;
+    padding: 0px;
+    margin: 0;
+    background-color:rgb(171, 255, 196);
+    border-bottom: 2px solid #000;}
+    h2{ padding: 0px;
+      margin: 0;}
+    #title{color: red;
+  border-bottom: 1px solid #000;
+  outline: solid 2px #000;
+  }    
+  .box_flex{
+    display : -webkit-box;
+    display : -webkit-flex;
+    display : -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow : row wrap;
+    -ms-flex-flow     : row wrap;
+    flex-flow         : row wrap;
+    align-items: flex-start;
+    width             : 150px;
+    height            : 120px;
+    margin            : 10px;
+    padding           : 3px;
+  }
+  .item_area{
+    display: inline-block;
+    width: 200px;
+    background-color: azure;
+    margin:  3px;
+    vertical-align: top;
+  }
+  .box_flex > div{
+    margin: 2px;
+    width: 40px;
+    min-height: 10px;
+    line-height: 30px;
+    background-color: bisque;
+  }
+
+</style>
+</head>
+<body>
+<div class="main_1">
+<section><h1>secction_title</h1>main</section>
+aaaaa
+</div>
+<div class="item_area">
+<div class="box_flex" id="flex_box_setting">
+<div id="box_flex">aaa</div>
+<div id="box_flex">aaa</div>
+<div id="box_flex">aaa</div>
+<div id="box_flex">aaa</div>
+<div id="box_flex">aaa</div>
+</div>
+</div>
+
+</body>
+</html>
