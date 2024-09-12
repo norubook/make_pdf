@@ -13,7 +13,7 @@ def on_register():
         return
     
     # 登録成功のメッセージボックスを表示
-    messagebox.showinfo("情報", "情報が登録されました。")
+    messagebox.showinfo("ファイル選択", "次に変換するファイルを選択してください")
     
     # テキストエリアに入力情報を表示
     info = f"""
@@ -26,15 +26,18 @@ app = tk.Tk()
 app.title("入力フォーム")
 
 # 各ラベルとエントリーフィールドを作成し、gridで配置
+text_title = tk.Label(app, text="必要情報を入力してください", anchor=tk.CENTER)
+text_title.grid(row=0, column=0)
+
 label_title = tk.Label(app, text="タイトル", anchor=tk.CENTER)
-label_title.grid(row=0, column=0)
+label_title.grid(row=1, column=0)
 
 entry_title = tk.Entry(app)
-entry_title.grid(row=0, column=1)
+entry_title.grid(row=1, column=1)
 
 
 label_gender = tk.Label(app, text="性別", anchor=tk.CENTER)
-label_gender.grid(row=5, column=0)
+label_gender.grid(row=2, column=0)
 
 # 性別のラジオボタンを作成
 gender_var = tk.StringVar()
