@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新聞スタイルのページ</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* 2カラムレイアウト */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 左のメイン記事 */
+        .main-article {
+            flex: 2;
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+        }
+
+        /* 右のサイド記事 */
+        .side-article {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* 画像スタイル */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 見出しスタイル */
+        h1, h2, h3 {
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <h1>今日のニュース</h1>
+        <p>最新のニュースをお届けします</p>
+    </header>
+
+    <!-- コンテンツ領域 -->
+    <div class="container">
+        <!-- メイン記事 -->
+        <article class="main-article">
+            <h2>メイン記事のタイトル</h2>
+            <img src="main-article.jpg" alt="メイン記事の画像">
+            <p>ここにメイン記事の内容が入ります。これはサンプルの段落です。新聞スタイルのレイアウトでは、テキストは通常、複数の段落にわたって整然と配置されます。</p>
+            <p>テキストは左右に揃えて表示され、読みやすくなります。複数のカラムやテキストブロックを使って情報を整理します。</p>
+        </article>
+
+        <!-- サイド記事 -->
+        <aside class="side-article">
+            <h3>サイド記事1</h3>
+            <p>これはサイド記事の1つ目です。ニュースレイアウトでは、サイドに追加の記事や情報が掲載されます。</p>
+
+            <h3>サイド記事2</h3>
+            <p>これはサイド記事の2つ目です。サイドの記事は、短い情報や注目の話題を伝えるために利用されます。</p>
+        </aside>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2024 新聞社 | すべての権利を保有します</p>
+    </footer>
+
+</body>
+</html>

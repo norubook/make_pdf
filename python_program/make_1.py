@@ -5,6 +5,120 @@ import tkinter as tk
 from tkinter import filedialog
 # 参考サイト https://murasan-itlab.com/python-tkinter-inputform/
 
+
+def make_html(file,title,text):
+    out_path = os.path.abspath(os.path.join(file, os.pardir))+'/'
+
+
+    a=0
+    output='''
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新聞スタイルのページ</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* 2カラムレイアウト */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 左のメイン記事 */
+        .main-article {
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* 画像スタイル */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 見出しスタイル */
+        h1, h2, h3 {
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <h1>今日のニュース</h1>
+        <p>最新のニュースをお届けします</p>
+    </header>
+
+    <!-- コンテンツ領域 -->
+    <div class="container">
+        <!-- メイン記事 -->
+        <article class="main-article">
+            <h2>'''+title+'''</h2>
+            <!--img src="main-article.jpg" alt="メイン記事の画像"-->
+            <p>'''+text+'''</p>
+        </article>
+    </div>
+
+
+    <footer>
+        <h2>記事制作者</h2>
+        <p>名前のない作者</p>
+    </footer>
+
+</body>
+</html>
+'''
+    while 1:
+     try:
+      if a==0:
+       f = open('{}test.html'.format(out_path), 'x', encoding='UTF-8')
+       break
+      else:
+        f = open('{}test_{}.html'.format(out_path,str(a)), 'x', encoding='UTF-8')
+        break
+
+     except:
+      a+=1
+
+    f.write(output)
+    f.close()
+
+
+
+
+
 def on_register():
     # 各エントリーフィールドから値を取得
     title = entry_title.get()
@@ -22,7 +136,7 @@ def on_register():
     fr.close()
     # 登録成功のメッセージボックスを表示
     #messagebox.showinfo("ファイル選択", "次に変換するファイルを選択してください")
-    
+    make_html(text_file_path,title,fr_text)
     # テキストエリアに入力情報を表示
     info = f"""
 タイトル: {title}

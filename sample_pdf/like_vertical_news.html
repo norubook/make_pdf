@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>縦書き新聞スタイル</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* 縦書きレイアウト */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 縦書きのメイン記事 */
+        .main-article {
+            flex: 2;
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+            writing-mode: vertical-rl; /* 縦書きの指定 */
+            text-align: justify;
+        }
+
+        /* 縦書きのサイド記事 */
+        .side-article {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+            writing-mode: vertical-rl; /* 縦書きの指定 */
+            text-align: justify;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* 画像スタイル */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 見出しスタイル */
+        h1, h2, h3 {
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <h1>縦書きニュース</h1>
+        <p>最新のニュースを縦書きでお届けします</p>
+    </header>
+
+    <!-- コンテンツ領域 -->
+    <div class="container">
+        <!-- メイン記事 -->
+        <article class="main-article">
+            <h2>メイン記事のタイトル</h2>
+            <img src="main-article.jpg" alt="メイン記事の画像">
+            <p>ここにメイン記事の内容が入ります。これはサンプルの段落です。縦書きのレイアウトでは、文字が右から左に流れるように表示されます。</p>
+            <p>テキストは縦に並べられ、読みやすさが保たれています。新聞スタイルのレイアウトでは、テキストが視覚的に整理されます。</p>
+        </article>
+
+        <!-- サイド記事 -->
+        <aside class="side-article">
+            <h3>サイド記事1</h3>
+            <p>これはサイド記事の1つ目です。ニュースレイアウトでは、サイドに追加の記事や情報が掲載されます。</p>
+
+            <h3>サイド記事2</h3>
+            <p>これはサイド記事の2つ目です。サイドの記事は、短い情報や注目の話題を伝えるために利用されます。</p>
+        </aside>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2024 縦書き新聞社 | すべての権利を保有します</p>
+    </footer>
+
+</body>
+</html>
