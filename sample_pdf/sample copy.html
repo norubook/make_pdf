@@ -1,0 +1,87 @@
+<!DOCUTYPE html>
+<html lang="ja">
+<head>
+<div id="title" >
+title
+</div>
+<style>
+  .double_border_line_box{
+    padding: 5px 10px;
+    color: aqua;
+    background-color: cornsilk;
+    border-left: double 7px;
+    border-right: double 7px;
+    min-height: 100px;
+  }
+    h1{ color:blue;}
+    #title{color: red;
+  border-bottom: 3px solid #000;
+  }    
+  .content_setting{
+    background-color: darkcyan;
+
+  }
+  .content_box{
+    width: 50px;
+    border:3px solid #000;
+    border-bottom: 2px solid blue;
+    color: #000;
+    margin: 5px;
+  }
+  .not_exist_margin_content_box{
+    width: 50px;
+    border:3px solid #000;
+    border-bottom: 2px solid blue;
+    color: #000;
+  }
+  #float_l{
+    float: left;
+  }
+  .clear{
+    clear: both;
+  }
+  .slash{
+    transform: rotate(45deg);
+    width: 141px;
+    border:0px;
+    border-top: 2px solid #000;
+    transform-origin: 0% 0%;
+
+  }
+  .slash_box{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+  }
+
+</style>
+</head>
+<body>
+<div class="double_border_line_box" id="a">
+  <div class="content_box" id="float_l">aaa</div>
+  <div class="content_box" id="float_l">bbb</div>
+  <div class="clear"></div>
+  <div class="content_box" id="float_l">ccc</div>
+  <div class="content_box" id="float_l">ddd</div>
+  
+
+</div>
+<div>
+<div class="not_exist_margin_content_box" id="float_l">aaa</div>
+<div class="not_exist_margin_content_box" id="float_l">bbb</div>
+<div class="clear"></div>
+<div class="not_exist_margin_content_box" id="float_l">ccc</div>
+<div class="not_exist_margin_content_box" id="float_l">ddd</div>
+</div>
+
+<br>
+<div class="main_1">
+<section><h1>secction_title</h1>main</section>
+aaaaa
+</div>
+aaaaddd
+<div class="slash_box"><d
+  iv class="slash"></div></div>
+
+</body>
+</html>
