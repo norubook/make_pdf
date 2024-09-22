@@ -1,4 +1,5 @@
-import tkinter,os
+import os
+import tkinter as tk
 from tkinter import filedialog
 
 file = filedialog.askopenfilename(filetypes=[("","*")])

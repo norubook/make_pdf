@@ -6,7 +6,7 @@ from tkinter import filedialog
 # 参考サイト https://murasan-itlab.com/python-tkinter-inputform/
 
 
-def make_html(file,title,text):
+def make_html(file,title,text,user_name):
     out_path = os.path.abspath(os.path.join(file, os.pardir))+'/'
 
 
@@ -94,7 +94,7 @@ def make_html(file,title,text):
 
     <footer>
         <h2>記事制作者</h2>
-        <p>名前のない作者</p>
+        <p>'''+user_name+'''</p>
     </footer>
 
 </body>
@@ -122,10 +122,10 @@ def make_html(file,title,text):
 def on_register():
     # 各エントリーフィールドから値を取得
     title = entry_title.get()
-    gender = gender_var.get()
+    user_name = entry_user_name.get()
     
     # 全てのフィールドが入力されているか確認
-    if not (title and gender):
+    if not (title and user_name):
         messagebox.showwarning("警告", "すべてのフィールドを入力してください。")
         return
      
@@ -136,11 +136,11 @@ def on_register():
     fr.close()
     # 登録成功のメッセージボックスを表示
     #messagebox.showinfo("ファイル選択", "次に変換するファイルを選択してください")
-    make_html(text_file_path,title,fr_text)
+    make_html(text_file_path,title,fr_text,user_name)
     # テキストエリアに入力情報を表示
     info = f"""
 タイトル: {title}
-性別: {gender}
+性別: {user_name}
 text: {fr_text}
 """
     text_area.insert(tk.END, info)
@@ -168,17 +168,12 @@ label_title.grid(row=1, column=0)
 entry_title = tk.Entry(app)
 entry_title.grid(row=1, column=1)
 
+label_user_name = tk.Label(app, text="筆者の名前", anchor=tk.CENTER)
+label_user_name.grid(row=2, column=0)
 
-label_gender = tk.Label(app, text="性別", anchor=tk.CENTER)
-label_gender.grid(row=2, column=0)
+entry_user_name = tk.Entry(app)
+entry_user_name.grid(row=2, column=1)
 
-# 性別のラジオボタンを作成
-gender_var = tk.StringVar()
-gender_var.set(None)
-radio_male = tk.Radiobutton(app, text="男性", variable=gender_var, value="男性")
-radio_male.grid(row=3, column=1, sticky=tk.W)
-radio_female = tk.Radiobutton(app, text="女性", variable=gender_var, value="女性")
-radio_female.grid(row=4, column=1, sticky=tk.W)
 
 #ファイル選択ボタン
 file_select = tk.Button(app, text="ファイルを選択", command=select_file)
